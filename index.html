@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eid Mubarak Tasha 💖</title>
+
+<style>
+body{
+  margin:0;
+  background:black;
+  color:white;
+  font-family:sans-serif;
+  text-align:center;
+}
+
+.page{
+  display:none;
+  height:100vh;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.active{
+  display:flex;
+}
+
+button{
+  padding:12px 20px;
+  border:none;
+  border-radius:20px;
+  background:gold;
+  margin-top:20px;
+  font-size:16px;
+}
+
+h1,p{
+  padding:15px;
+}
+
+/* heart animation */
+.heart{
+  position:fixed;
+  bottom:0;
+  font-size:20px;
+  animation:up 5s linear infinite;
+}
+
+@keyframes up{
+  from{transform:translateY(0); opacity:1;}
+  to{transform:translateY(-100vh); opacity:0;}
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="p1" class="page active">
+<h1>🌙 Eid Mubarak Tasha 💖</h1>
+<button onclick="show(2)">Open 💌</button>
+</div>
+
+<div id="p2" class="page">
+<p>
+Eid Mubarak, amar priyo Tasha 🌙✨<br><br>
+Aajker ei pobitro dine tomake janai onek bhalobasha 💖<br>
+Tumi amar jiboner shobcheye shundor onuvuti 🫶
+</p>
+<button onclick="show(3)">Next ➡️</button>
+</div>
+
+<div id="p3" class="page">
+<p>
+Tomar sathe thakar protita muhurto special gift 🎁<br>
+Tomar hashi deklei prithibi shundor hoye jay 😌
+</p>
+<button onclick="show(4)">Next ➡️</button>
+</div>
+
+<div id="p4" class="page">
+<p>
+Allah tomar jibon shukhe bhore rakhuk 🤲<br>
+Protita Eid amra ekshathe celebrate kori ❤️
+</p>
+<button onclick="show(5)">Last 💖</button>
+</div>
+
+<div id="p5" class="page">
+<h2>I love you Tasha 🫦💋</h2>
+<p>— From Rifat 💌</p>
+</div>
+
+<script>
+function show(n){
+  document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
+  document.getElementById('p'+n).classList.add('active');
+}
+
+/* hearts */
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),5000);
+},500);
+</script>
+
+</body>
+</html>
